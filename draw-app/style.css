@@ -1,0 +1,122 @@
+html, body {
+  margin: 0px;
+  height: 100%;
+}
+
+.sidebar {
+	grid-area: sidebar;
+	overflow-y: scroll;
+}
+
+#content {
+	grid-area: content;
+}
+
+.header {
+	grid-area: header;
+    font: normal normal bold 14px/normal "Battambang", Helvetica, sans-serif;
+}
+
+.footer{
+  grid-area: footer;
+}
+
+.sideBarItem{
+	max-height: 45px;
+	max-width: 45px;
+	padding: 5px;
+    border-radius: 20%;
+}
+
+.sideBarItem img{
+	max-height: 50px;
+	max-Width:45px;
+    border-radius: 20%;
+}
+
+.colourPalette{
+	grid-area: colourP;
+	display:flex;
+	flex-direction:grid;
+	flex-flow: wrap;
+}
+
+.options{
+	grid-area: options;
+	padding: 15px;
+}
+
+.colourSwatches{
+	box-sizing: border-box;
+    border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	max-height: 40px;
+	max-width: 40px;
+	margin: 5px;
+}
+
+
+.wrapper {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 75px 230px  minmax(500px, 1fr);
+    grid-template-rows: 35px minmax(500px, 1fr) 160px;
+    grid-template-areas:
+           "header header header"
+            "sidebar content content"
+            "colourP colourP options";
+    background-color: white;
+    color: #444;
+}
+
+.box {
+  background-color: skyblue;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 180%;
+}
+
+.header {
+  background-color: deepskyblue;
+}
+
+/* css code taken from http://enjoycss.com/gallery/buttons/Sr and edited by us */
+button {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 100px;
+  cursor: pointer;
+  padding: 0.5px 5px;
+  border: none;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  font: normal normal bold 14px/normal "Battambang", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgb(0, 0, 255);
+  -webkit-transition: background 0.2s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -moz-transition: background 0.2s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -o-transition: background 0.2s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: background 0.2s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+
+}
+
+
+#dropzone {
+    padding: 30px;
+    border-style: dashed;
+    font-size: 12pt;
+    width: 20%;
+    z-index: 3000;
+    grid-area: options;
+	display:flex;
+	flex-direction:grid;
+	flex-flow: wrap;
+    color: aliceblue;
+}
+

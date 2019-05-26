@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <!--  Imported libraries  -->
+    <script src="lib/jquery-3.2.1.slim.min.js"></script>
+    <script src="lib/p5.min.js"></script>
+    <script src="lib/p5/p5/addons/p5.dom.min.js"></script>  
+
+    <!-- Removes favicon.ico error -->
+    <link rel="icon" href="data:;base64,=">  
+    
+    <!--  Main sketch.js file  -->
+    <script src="sketch.js"></script>
+
+    <!-- add extra scripts below -->
+    <script src="toolbox.js"></script>
+    <script src="colourPalette.js"></script>
+    <script src="helperFunctions.js"></script>
+      
+    <!--  Javascript files for the tools   -->
+    <script src="freehandTool.js"></script>
+    <script src="paintBrushTool.js"></script>
+    <script src="lineToTool.js"></script>
+    <script src="sprayCanTool.js"></script>
+    <script src="mirrorDrawTool.js"></script>
+    <script src="rectToTool.js"></script>
+    <script src="ellipseToTool.js"></script>
+    <script src="triangleToTool.js"></script>
+    <script src="stampTool.js"></script>
+    <script src="textTool.js" id="text"></script>
+    <script src="eraser.js"></script>
+    <script src="spirograph.js"></script>
+    <script src="customShapeTool.js"></script>
+    <script src="flowerTool.js"></script>
+   
+    <!-- CSS link  -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+ 
+  <body>
+  	<div class="wrapper">
+      <!--  Name of the draw app  -->
+      <div class="box header">Art Attack
+        <!--  Helper function buttons   -->
+        <button id="clearButton">Clear</button>
+        <button id="saveImageButton">Save Image</button>
+        <button id="greyScale">Greyscale</button> 
+        <button id="blur">Blur</button>
+        <button id="invert">Invert</button> 
+        <button id="threshold">Threshold</button>  
+      </div>
+      <!-- Drop zone text  -->
+      <p id="dropzone">Drag your image file here</p>
+      <div class="box sidebar"></div>
+      <div id="content"></div>
+      <div class="box colourPalette"></div>
+      <div class="box options"></div>
+	</div>
+  </body>
+</html>

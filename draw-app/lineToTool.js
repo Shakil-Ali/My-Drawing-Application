@@ -1,0 +1,50 @@
+// A tool for drawing straight lines to the screen. Allows the user to preview the a line to the current mouse position before drawing the line to the pixel array
+
+function LineToTool(){
+    
+    // sets the icon shown in the program and the name of the tool
+	this.icon = "assets/lineTo.jpg";
+	this.name = "LineTo";
+
+    // initialises the variables
+	var startMouseX = -1;
+	var startMouseY = -1;
+	var drawing = false;
+
+	// draws the line to the screen 
+	this.draw = function(){
+
+		// only draw when mouse is clicked
+		if(mouseIsPressed){
+			// if it's the start of drawing a new line
+			if(startMouseX == -1){
+				startMouseX = mouseX;
+				startMouseY = mouseY;
+                strokeWeight(1);
+                // sets the drawing variable to true
+				drawing = true;
+				// save the current pixel Array
+				loadPixels();
+			}
+
+			else{
+				//update the screen with the saved pixels to hide any previous line between mouse pressed and released
+				updatePixels();
+				// draws the line
+				line(startMouseX, startMouseY, mouseX, mouseY);
+			}
+
+		}
+
+		else if(drawing){
+			// save the pixels with the most recent line and reset the drawing bool and start locations
+			loadPixels();
+            // sets drawing variable to false
+			drawing = false;
+			startMouseX = -1;
+			startMouseY = -1;
+		}
+	};
+
+
+}
